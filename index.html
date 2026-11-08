@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BauBenFlet</title>
+<meta name="theme-color" content="#16a34a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<style>
+:root{--g:#16a34a;--gd:#0f7a36;--gl:#e8f6ee;--bd:#e6ece8;--tx:#111;--mu:#6b7a70;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);color-scheme:light}
+*{box-sizing:border-box}html,body{margin:0;background:#f5f7f6;color:var(--tx);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.app{max-width:480px;margin:0 auto;min-height:100vh;background:#f5f7f6;padding-bottom:90px}
+.hd{background:#fff;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:env(safe-area-inset-top,0px);z-index:5;box-shadow:0 1px 0 var(--bd)}
+.lg{display:flex;align-items:center;gap:8px;font-weight:800;font-size:20px}.lg svg{width:46px;height:30px}
+.hi{font-size:13px;color:var(--mu)}
+.pad{padding:16px}
+.hero{background:var(--g);color:#fff;border-radius:20px;padding:20px;box-shadow:0 6px 16px rgba(22,163,74,.25)}
+.hero h1{margin:0 0 4px;font-size:22px}.hero p{margin:0 0 14px;font-size:14px;opacity:.95}
+.hb{background:#fff;color:var(--gd);border:0;border-radius:24px;padding:10px 18px;font-weight:700;font-size:15px;cursor:pointer}
+h3{margin:22px 0 10px;font-size:17px}
+.sc{display:grid;grid-template-columns:repeat(4,1fr);gap:14px 6px}
+.tile{background:none;border:0;display:flex;flex-direction:column;align-items:center;gap:7px;font-size:12px;font-weight:600;color:var(--tx);cursor:pointer;padding:0;line-height:1.2}
+.ic{width:58px;height:58px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08);display:flex;align-items:center;justify-content:center;font-size:26px}
+.tile:active .ic{background:var(--gl)}
+.card{background:#fff;border-radius:16px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.li{display:flex;align-items:center;gap:12px;padding:14px;border:0;background:none;width:100%;text-align:left;font-size:15px;font-weight:600;border-bottom:1px solid var(--bd);cursor:pointer;color:var(--tx)}
+.li:last-child{border:0}.li .ic{width:40px;height:40px;font-size:20px;background:var(--gl);box-shadow:none}.li i{margin-left:auto;color:var(--mu);font-style:normal}
+.btn{width:100%;background:var(--g);color:#fff;border:0;border-radius:14px;padding:15px;font-size:17px;font-weight:700;margin-top:14px;cursor:pointer}
+.btn.alt{background:#fff;color:var(--gd);border:2px solid var(--g)}
+label{display:block;font-weight:700;margin:14px 0 6px;font-size:14px}
+textarea,input{width:100%;border:2px solid var(--bd);border-radius:12px;padding:12px;font-size:16px;font-family:inherit;background:#fff;color:var(--tx)}
+textarea{min-height:120px;resize:vertical}textarea:focus,input:focus{outline:none;border-color:var(--g)}
+.row{display:flex;gap:10px}.row>div{flex:1}
+.top{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fff;box-shadow:0 1px 0 var(--bd)}
+.back{background:var(--gl);border:0;border-radius:50%;width:40px;height:40px;font-size:20px;color:var(--gd);cursor:pointer}
+.top h2{margin:0;font-size:18px}
+.fp{width:96px;height:96px;border-radius:50%;background:#fff;box-shadow:0 4px 14px rgba(22,163,74,.3);border:3px solid var(--g);margin:26px auto 10px;display:flex;align-items:center;justify-content:center;font-size:48px;cursor:pointer}
+.mu{color:var(--mu);text-align:center;font-size:14px}
+.ord{padding:14px;border-bottom:1px solid var(--bd)}.ord b{color:var(--gd)}.ord small{color:var(--mu)}
+.msg{background:var(--gl);border-radius:12px;padding:12px;margin-top:12px;font-size:14px;cursor:pointer}
+.nav{position:fixed;bottom:0;left:0;right:0;background:#fff;box-shadow:0 -1px 0 var(--bd);display:flex;justify-content:space-around;padding:8px 0 calc(8px + env(safe-area-inset-bottom,0px));max-width:480px;margin:0 auto}
+.nav button{background:none;border:0;font-size:11px;font-weight:600;color:var(--mu);display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer}.nav span{font-size:22px}.nav .on{color:var(--gd)}
+.burger{background:none;border:0;font-size:28px;cursor:pointer;color:#111;padding:0 4px;line-height:1}.act{margin-top:6px}.act .btn{margin-top:8px;padding:11px;font-size:15px}@keyframes kb{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}@keyframes chv{0%{opacity:.1;transform:translateY(12px)}50%{opacity:1}100%{opacity:.1;transform:translateY(-12px)}}#kn{animation:kb 1.6s ease-in-out infinite}.chev{animation:chv 1.6s ease-in-out infinite}.hide{display:none!important}
+</style></head><body><div class="app">
+<section id="lock"><div style="padding:60px 16px 0;text-align:center"><div class="lg" style="justify-content:center;font-size:30px"><span style="width:80px;display:inline-block"><svg viewBox="0 0 60 38" fill="none" stroke="#16a34a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M4 8h30q5 0 8 5l8 9v8H4z"/><path d="M34 12v9h12"/><circle cx="16" cy="31" r="5" fill="#fff"/><circle cx="42" cy="31" r="5" fill="#fff"/></svg></span>BauBenFlet</div>
+<div id="sw" style="position:relative;width:84px;height:210px;margin:26px auto 10px;border-radius:42px;background:#e8f6ee;border:2px solid #16a34a;touch-action:none"><div class="chev" style="position:absolute;top:22px;left:0;right:0;text-align:center;color:#16a34a;font-size:26px;line-height:22px;font-weight:800">˄<br>˄<br>˄</div><div id="kn" tabindex="0" role="button" aria-label="Deslizá hacia arriba" style="position:absolute;left:8px;bottom:8px;width:64px;height:64px;border-radius:50%;background:#16a34a;color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;box-shadow:0 4px 12px rgba(22,163,74,.4);touch-action:none">↑</div></div><p class="mu" id="lm">Deslizá hacia arriba para entrar</p>
+<button class="btn hide" id="lb"></button><button class="btn alt hide" id="lskip">Entrar sin huella</button><button class="btn alt" id="lacc">Crear cuenta</button></div></section>
+
+<section id="acc" class="hide"><div class="top"><button class="back" id="b3">←</button><h2>Crear cuenta</h2></div><div class="pad"><label for="an">Nombre y apellido</label><input id="an" autocomplete="name" placeholder="Ej: Juan Pérez"><label for="ap">Número</label><input id="ap" type="tel" autocomplete="tel" placeholder="Ej: 11 1234 5678"><button class="btn" id="asave">Crear cuenta</button><div class="msg hide" id="aok"></div></div></section>
+
+<section id="home" class="hide"><div class="hd"><div class="lg"><svg viewBox="0 0 60 38" fill="none" stroke="#16a34a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"><path d="M4 8h30q5 0 8 5l8 9v8H4z"/><path d="M34 12v9h12"/><circle cx="16" cy="31" r="5" fill="#fff"/><circle cx="42" cy="31" r="5" fill="#fff"/></svg>BauBenFlet</div><div style="display:flex;align-items:center;gap:10px"><div class="hi" id="hi">Hola 👋</div><button class="burger" id="mb" aria-label="Menú">☰</button></div></div>
+<div class="pad"><div class="hero"><h1>¿Qué necesitás hoy?</h1><p>Fletes, mudanzas y más. Pedí y te respondemos rápido.</p><button class="hb" id="wa">Escribinos por WhatsApp</button></div>
+<h3>Servicios</h3><div class="sc" id="grid"></div>
+<h3>Más opciones</h3><div class="card" id="lst"></div><button class="btn alt" id="hacc">👤 Crear cuenta</button></div></section>
+
+<section id="form" class="hide"><div class="top"><button class="back" id="b1">←</button><h2 id="ft"></h2></div><div class="pad">
+<label for="what">¿Qué te gustaría hacer / llevar?</label><textarea id="what" placeholder="Escribí acá…"></textarea>
+<div class="row"><div><label for="dt">Fecha estimada</label><input type="date" id="dt"></div><div><label for="tm">Hora estimada</label><input type="time" id="tm"></div></div>
+<label for="nm">Tu nombre</label><input id="nm" autocomplete="name">
+<label for="ph">Tu teléfono</label><input id="ph" type="tel" autocomplete="tel">
+<button class="btn" id="send">Continuar</button><div class="msg hide" id="ok"></div><a id="wal" class="btn hide" target="_blank" rel="noopener" style="display:block;text-align:center;text-decoration:none">📲 Enviar por WhatsApp</a><button class="btn alt hide" id="cont">Ya lo envié → Continuar</button></div></section>
+
+<section id="orders" class="hide"><div class="top"><button class="back" id="b2">←</button><h2>Pedidos</h2></div><div class="pad"><div class="card" id="ol"><p class="mu" style="padding:14px">Cargando…</p></div></div></section>
+
+<section id="menu" class="hide"><div class="top"><button class="back" id="b4">←</button><h2>Menú</h2></div><div class="pad"><div class="card"><button class="li" id="m1"><span class="ic">🚚</span>Cuenta de BauBenFlet<i>›</i></button><button class="li" id="m2"><span class="ic">❓</span>Centro de Ayuda<i>›</i></button><button class="li" id="m3"><span class="ic">🚪</span>Cerrar sesión<i>›</i></button></div></div></section>
+
+<section id="help" class="hide"><div class="top"><button class="back" id="b6">←</button><h2>Centro de Ayuda</h2></div><div class="pad"><div class="card" style="padding:16px;line-height:1.5;font-size:15px"><b>¿Cómo pido un servicio?</b><br>Elegí el servicio, contanos qué querés hacer o llevar, poné fecha y hora y tocá Enviar pedido.<br><br><b>¿Cómo repito un pedido?</b><br>En Mis pedidos tocá Repetir.<br><br><b>¿Cómo opino?</b><br>En Mis pedidos tocá Opinar, elegí las estrellas y mandale tu comentario a Adrián por WhatsApp.<br><br><b>¿Pedidos para hoy?</b><br>Adrián te confirma el pedido por WhatsApp. Antes de enviarlo elegís cómo pagás, y después compartís tu ubicación con él.</div><button class="btn" id="hw">Hablar con soporte por WhatsApp</button></div></section>
+
+<section id="mine" class="hide"><div class="top"><button class="back" id="b5">←</button><h2>Mis pedidos</h2></div><div class="pad" id="ml"></div></section>
+
+<section id="rev" class="hide"><div class="top"><button class="back" id="b7">←</button><h2>Tu opinión</h2></div><div class="pad"><div id="stars" style="text-align:center"></div><label for="rt">¿Cómo fue el servicio?</label><textarea id="rt" placeholder="Contanos tu experiencia…"></textarea><button class="btn" id="rsend">Enviar opinión</button><div class="msg hide" id="rok"></div></div></section>
+
+<section id="pay" class="hide"><div class="top"><h2>Pago</h2></div><div class="pad"><h3 style="margin-top:4px">¿Con qué pagás?</h3><div class="row"><button class="btn alt" id="ptj" style="flex:1">💳 Tarjeta</button><button class="btn alt" id="pef" style="flex:1">💵 Efectivo</button></div><div id="pm" class="hide"><p class="mu" style="margin:14px 0 0">El precio te lo confirma Adrián por WhatsApp.</p><label for="pamt" id="pml" style="display:none">Monto a pagar ($)</label><input id="pamt" style="display:none" type="number" inputmode="decimal" placeholder="Ej: 15000"><button class="btn" id="pgo">📲 Enviar por WhatsApp</button><button class="btn alt hide" id="pnext">Ya lo envié → Ver mapa</button></div></div></section>
+
+<section id="map" class="hide"><div class="top"><button class="back" id="b8">←</button><h2>Mapa</h2></div><div class="pad"><div class="card" style="overflow:hidden;position:relative"><svg id="msvg" viewBox="0 0 300 300" style="width:100%;display:block;touch-action:none;cursor:grab"></svg><div style="position:absolute;right:10px;bottom:10px;display:flex;flex-direction:column;gap:6px"><button class="back" id="zi" style="background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.3)">+</button><button class="back" id="zo" style="background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.3)">−</button><button class="back" id="zc" style="background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.3)">🎯</button></div></div><div class="msg" id="mapmsg" style="cursor:default"></div><button class="btn hide" id="mapgo">🗺️ Abrir en Google Maps</button><button class="btn alt" id="mapretry">🔄 Reintentar ubicación</button><button class="btn alt" id="mapwa">📲 Mandarle a Adrián mi pago y ubicación</button></div></section>
+
+<div id="lp" class="hide" style="position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:60;display:flex;align-items:center;justify-content:center;padding:24px"><div style="background:#fff;border-radius:20px;padding:24px;max-width:340px;width:100%;text-align:center"><div style="font-size:44px">📍</div><h3 style="margin:8px 0">¿Permitís ver tu ubicación?</h3><p class="mu" style="margin:0 0 6px">BauBenFlet usa tu ubicación para mostrarte en el mapa y avisarle a Adrián dónde estás.</p><button class="btn" id="lpy">Permitir</button><button class="btn alt" id="lpn">Ahora no</button></div></div>
+<div id="wipe" style="position:fixed;left:0;top:0;width:20px;height:20px;border-radius:50%;background:#16a34a;opacity:0;pointer-events:none;z-index:50"></div>
+<div class="nav hide" id="nav"><button class="on" id="n1"><span>🏠</span>Inicio</button><button id="n4"><span>🧾</span>Mis pedidos</button><button id="n2"><span>🛟</span>Soporte</button></div>
+</div>
+<script>
+const WA="5491155701880";
+const S=[["🐾","Traslado de mascotas"],["🚚","Fletes"],["📦","Mudanzas"],["🛟","Soporte"],["🎁","Paquetería"],["🗂️","Distribución"],["🚕","Remis"],["⚡","Trabajo de electricidad"]];
+const $=i=>document.getElementById(i);let cur="",db=null,user=null;
+function show(id){document.querySelectorAll("section").forEach(x=>x.classList.toggle("hide",x.id!==id));$("nav").classList.toggle("hide",id==="lock"||(id==="acc"&&accFrom==="lock"))}
+$("grid").innerHTML=S.map((s,i)=>`<button class="tile" data-i="${i}"><span class="ic">${s[0]}</span>${s[1].replace("Traslado de mascotas","Mascotas").replace("Trabajo de electricidad","Electricidad")}</button>`).join("");
+$("lst").innerHTML=S.map((s,i)=>`<button class="li" data-i="${i}"><span class="ic">${s[0]}</span>${s[1]}<i>›</i></button>`).join("");
+const pick=e=>{const t=e.target.closest("[data-i]");if(!t)return;open_(S[t.dataset.i][1])};
+function open_(n){cur=n;$("wal").classList.add("hide");$("cont").classList.add("hide");$("ft").textContent=n;$("ok").classList.add("hide");show("form")}
+$("grid").onclick=pick;$("lst").onclick=pick;
+var accFrom="lock";
+function applyAcc(a){$("hi").textContent="Hola, "+a.name.split(" ")[0]+" 👋";$("nm").value=a.name;$("ph").value=a.phone;$("an").value=a.name;$("ap").value=a.phone}
+try{const a=JSON.parse(localStorage.getItem("bbf-acc")||"null");if(a&&a.name)applyAcc(a)}catch(e){}
+$("lacc").onclick=()=>{accFrom="lock";$("aok").classList.add("hide");show("acc")};
+$("hacc").onclick=()=>{accFrom="home";$("aok").classList.add("hide");show("acc")};
+$("b3").onclick=()=>show(accFrom);
+$("asave").onclick=async()=>{const a={name:$("an").value.trim(),phone:$("ap").value.trim(),at:Date.now()};if(!a.name){$("an").focus();return}if(!a.phone){$("ap").focus();return}
+ try{localStorage.setItem("bbf-acc",JSON.stringify(a))}catch(e){}
+ try{if(db)await db.collection("accounts").doc("a"+a.at).set(a)}catch(e){}
+ applyAcc(a);$("aok").textContent="✅ ¡Cuenta creada! Ya podés hacer tus pedidos.";$("aok").classList.remove("hide");setTimeout(()=>show(accFrom),1200)};
+const today=()=>{const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")};
+const mine=()=>{try{return JSON.parse(localStorage.getItem("bbf-mine")||"[]")}catch(e){return[]}};
+const saveMine=l=>{try{localStorage.setItem("bbf-mine",JSON.stringify(l))}catch(e){}};
+const watched={};
+function watchMine(){if(!db)return;mine().forEach(o=>{const id="o"+o.at;if(watched[id])return;watched[id]=1;db.collection("orders").doc(id).onSnapshot(s=>{if(!s.exists)return;const l=mine();const i=l.findIndex(x=>x.at===o.at);if(i<0)return;Object.assign(l[i],s.data());saveMine(l);if(!$("mine").classList.contains("hide"))renderMine();if(!$("map").classList.contains("hide"))renderMap()},()=>{})})}
+function btn(p,t,f,k){const b=document.createElement("button");b.className="btn"+(k?" "+k:"");b.style.marginTop="10px";b.style.flex="1";b.textContent=t;b.onclick=f;p.append(b);return b}
+function renderMine(){const l=mine(),box=$("ml");box.textContent="";if(!l.length){const p=document.createElement("p");p.className="mu";p.textContent="Todavía no hiciste pedidos.";box.append(p);return}
+ l.forEach(o=>{const c=document.createElement("div");c.className="card";c.style.cssText="padding:14px;margin-bottom:12px";
+  const add=(tag,txt,st)=>{const e=document.createElement(tag);e.textContent=txt;if(st)e.style.cssText=st;c.append(e);return e};
+  add("b",o.service,"color:#0f7a36;display:block");add("div",o.what);add("small",(o.date||"—")+" "+(o.time||"")+" · Enviado por WhatsApp","color:#6b7a70");
+  if(false)add("div","Si Adrián acepta tu pedido de hoy, acá vas a ver por dónde va.","margin-top:8px;font-size:13px;color:#6b7a70");
+  if(false){add("div","🚚 Adrián va por: "+(o.where||"en camino"),"margin-top:8px;font-weight:600");if(o.lat)btn(c,"🗺️ Ver mapa",()=>window.open("https://www.google.com/maps?q="+o.lat+","+o.lng,"_blank"))}
+  const r=document.createElement("div");r.className="row";c.append(r);
+  btn(r,o.stars?"⭐ "+o.stars+"/5":"⭐ Opinar",()=>openRev(o),"alt");
+  btn(r,"🔁 Repetir",()=>{open_(o.service);$("what").value=o.what;$("dt").value="";$("tm").value=""},"alt");
+  box.append(c)})}
+let revO=null,stars=0;
+function drawStars(){$("stars").textContent="";for(let i=1;i<=5;i++){const b=document.createElement("button");b.textContent=i<=stars?"★":"☆";b.style.cssText="background:none;border:0;font-size:40px;color:#16a34a;cursor:pointer";b.onclick=()=>{stars=i;drawStars()};$("stars").append(b)}}
+function openRev(o){revO=o;stars=o.stars||0;drawStars();$("rt").value=o.review||"";$("rok").classList.add("hide");show("rev")}
+$("rsend").onclick=async()=>{if(!stars)return;const d={stars,review:$("rt").value.trim()};const l=mine();const i=l.findIndex(x=>x.at===revO.at);if(i>=0){Object.assign(l[i],d);saveMine(l)}
+ try{window.open("https://api.whatsapp.com/send?phone="+WA+"&text="+encodeURIComponent("⭐ Opinión sobre mi pedido de "+revO.service+": "+stars+"/5\n"+(d.review||"")),"_blank")}catch(e){}
+ $("rok").textContent="¡Gracias por tu opinión!";$("rok").classList.remove("hide");setTimeout(()=>{show("mine");renderMine()},1200)};
+function dadActs(el,o){const d=el.querySelector(".act");if(!d||!db)return;const id="o"+o.at,st=o.status||"pendiente";
+ const s=document.createElement("small");s.textContent="Estado: "+st+(o.sameDay?" · PARA HOY":"")+(o.pay?" · "+o.pay+" $"+o.amount:"")+(o.stars?" · ⭐"+o.stars+(o.review?" "+o.review:""):"");d.append(s);
+ const up=x=>db.collection("orders").doc(id).update(x).catch(()=>{});
+ if(o.clat)btn(d,"📍 Ubicación del cliente",()=>window.open("https://www.google.com/maps?q="+o.clat+","+o.clng,"_blank"),"alt");if(st==="pendiente")btn(d,"✅ Aceptar",()=>up({status:"aceptado"}));
+ if(st==="aceptado"){if(true){const i=document.createElement("input");i.placeholder="Dirección / por dónde voy";i.value=o.where||"";i.style.marginTop="8px";d.append(i);btn(d,"📍 Actualizar ubicación",()=>{const send=(la,lo)=>up({where:i.value.trim(),lat:la,lng:lo});if(navigator.geolocation)navigator.geolocation.getCurrentPosition(p=>send(p.coords.latitude,p.coords.longitude),()=>send(null,null),{enableHighAccuracy:true});else send(null,null)},"alt")}
+  btn(d,"🏁 Marcar finalizado",()=>up({status:"finalizado"}))}}
+let pend=null,payOrder=null,payM=null,myPos=null,mapOrder=null;
+function startPay(o){payOrder=o.at;pend=null;payM=null;$("pm").classList.add("hide");$("pnext").classList.add("hide");$("pamt").value="";$("ptj").className="btn alt";$("pef").className="btn alt";show("pay")}
+function goPay(){if(!pend)return;mapOrder=pend;pend=null;let ok=false;try{ok=localStorage.getItem("bbf-loc")==="1"}catch(e){}if(ok){show("map");renderMap();locate()}else $("lp").classList.remove("hide")}
+$("lpy").onclick=()=>{$("lp").classList.add("hide");try{localStorage.setItem("bbf-loc","1")}catch(e){}show("map");renderMap();locate()};
+$("lpn").onclick=()=>{$("lp").classList.add("hide");show("map");renderMap();$("mapmsg").textContent="No diste permiso de ubicación. Podés volver a intentarlo en tu próximo pedido."}
+$("pnext").onclick=()=>{pend=payOrder;goPay()};
+let vb={x:0,y:0,w:300};function applyVb(){$("msvg").setAttribute("viewBox",vb.x+" "+vb.y+" "+vb.w+" "+vb.w)}
+function zoom(f){const cx=vb.x+vb.w/2,cy=vb.y+vb.w/2;vb.w=Math.min(900,Math.max(60,vb.w*f));vb.x=cx-vb.w/2;vb.y=cy-vb.w/2;applyVb()}
+$("zi").onclick=()=>zoom(0.7);$("zo").onclick=()=>zoom(1.4);$("zc").onclick=()=>{vb={x:0,y:0,w:300};applyVb()};
+(function(){const s=$("msvg");let d=null;s.onpointerdown=e=>{d={x:e.clientX,y:e.clientY};try{s.setPointerCapture(e.pointerId)}catch(x){}};s.onpointermove=e=>{if(!d)return;const k=vb.w/s.getBoundingClientRect().width;vb.x-=(e.clientX-d.x)*k;vb.y-=(e.clientY-d.y)*k;d={x:e.clientX,y:e.clientY};applyVb()};s.onpointerup=s.onpointercancel=()=>{d=null}})();
+document.addEventListener("visibilitychange",()=>{if(!document.hidden&&pend)goPay()});
+$("cont").onclick=goPay;
+function pickPay(m){payM=m;$("ptj").className="btn"+(m==="Tarjeta"?"":" alt");$("pef").className="btn"+(m==="Efectivo"?"":" alt");$("pm").classList.remove("hide");$("pml").textContent="Monto a pagar con "+m.toLowerCase()+" ($)";$("pamt").focus()}
+$("ptj").onclick=()=>pickPay("Tarjeta");$("pef").onclick=()=>pickPay("Efectivo");
+$("pgo").onclick=async()=>{if(!payM)return;const a=0;
+ const d={pay:payM,amount:a};const l=mine();const i=l.findIndex(x=>x.at===payOrder);if(i>=0){Object.assign(l[i],d);saveMine(l)}
+ const o=mine().find(x=>x.at===payOrder);if(o){const msg="*Pedido BauBenFlet – "+o.service+"*\n"+o.what+"\nFecha: "+(o.date||"a coordinar")+"  Hora: "+(o.time||"a coordinar")+"\nPago: "+payM+"\nNombre: "+o.name+"\nTel: "+o.phone;try{navigator.clipboard.writeText(msg)}catch(e){}window.open("https://api.whatsapp.com/send?phone="+WA+"&text="+encodeURIComponent(msg),"_blank");pend=payOrder;$("pnext").classList.remove("hide")}};
+function locate(){if(!navigator.geolocation){renderMap();$("mapmsg").textContent="Este navegador no permite ver la ubicación. Mandasela a Adrián por WhatsApp con el botón de abajo.";return}navigator.geolocation.getCurrentPosition(p=>{myPos=[p.coords.latitude,p.coords.longitude];renderMap();try{if(db&&mapOrder)db.collection("orders").doc("o"+mapOrder).update({clat:myPos[0],clng:myPos[1]}).catch(()=>{})}catch(e){}},err=>{const c=err&&err.code;$("mapmsg").textContent=c===1?"El celular o el navegador bloqueó la ubicación para esta página. Activala en Ajustes → Aplicaciones → (navegador o Claude) → Permisos → Ubicación. Mientras tanto, mandale tu ubicación a Adrián por WhatsApp con el botón de abajo.":c===3?"La ubicación tardó demasiado. Probá salir a un lugar abierto y tocá Reintentar.":"No pudimos obtener tu ubicación. Revisá que el GPS esté activado y tocá Reintentar."},{enableHighAccuracy:false,timeout:15000,maximumAge:60000})}
+function renderMap(){const o=mine().find(x=>x.at===mapOrder);if(!o)return;const dad=o.lat?[o.lat,o.lng]:null,me=myPos;const svg=$("msvg");svg.textContent="";
+ const NS="http://www.w3.org/2000/svg";const mk=(t,a,tx)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(tx)e.textContent=tx;svg.append(e);return e};
+ const RG=(()=>{let s=((mapOrder||1)%2147483646)+1;return()=>(s=s*48271%2147483647)/2147483647})();
+ mk("rect",{x:-900,y:-900,width:2100,height:2100,fill:"#f1f5f2"});
+ for(let i=0;i<6;i++)mk("rect",{x:-400+RG()*800,y:-400+RG()*600,width:70+RG()*110,height:50+RG()*80,rx:12,fill:"#cdebd7"});
+ const rd=[];for(let k=-15;k<=15;k++){rd.push([0,k*60+30,k%4===0]);rd.push([1,k*60+30,k%4===0])}rd.sort((p,q)=>p[2]-q[2]);
+ const rl=(r,st,w)=>mk("line",r[0]?{x1:-900,y1:r[1],x2:1200,y2:r[1],stroke:st,"stroke-width":w}:{x1:r[1],y1:-900,x2:r[1],y2:1200,stroke:st,"stroke-width":w});
+ rd.forEach(r=>rl(r,r[2]?"#e9cf7d":"#dde5df",r[2]?15:9));rd.forEach(r=>rl(r,r[2]?"#fde9a8":"#fff",r[2]?11:6));
+ mk("path",{d:"M-900 470 Q-300 410 150 480 T 900 450 L900 1200 L-900 1200Z",fill:"#cfe6f7"});
+ const pr=p=>[p[1]*Math.cos(p[0]*Math.PI/180),-p[0]];const L=[dad,me].filter(Boolean).map(pr);let f=p=>[150,150];
+ if(L.length===2){const xs=L.map(p=>p[0]),ys=L.map(p=>p[1]);const mx=(Math.min(...xs)+Math.max(...xs))/2,my=(Math.min(...ys)+Math.max(...ys))/2;const sp=Math.max(Math.max(...xs)-Math.min(...xs),Math.max(...ys)-Math.min(...ys),0.0005);const k=180/sp;f=p=>[150+(p[0]-mx)*k,150+(p[1]-my)*k]}
+ let a=dad?f(pr(dad)):null,b=me?f(pr(me)):null;
+ if(a&&b)mk("line",{x1:a[0],y1:a[1],x2:b[0],y2:b[1],stroke:"#16a34a","stroke-width":4,"stroke-dasharray":"8 6"});
+ const pin=(p,e,n)=>{if(!p)return;mk("circle",{cx:p[0],cy:p[1],r:22,fill:"#fff",stroke:"#16a34a","stroke-width":3});mk("text",{x:p[0],y:p[1]+9,"text-anchor":"middle","font-size":24},e);mk("text",{x:p[0],y:p[1]+42,"text-anchor":"middle","font-size":14,"font-weight":700,fill:"#0f7a36"},n)};
+ pin(a,"🚚","Adrián");pin(b,"📍","Vos");
+ let m;if(dad&&me){const R=6371,r=x=>x*Math.PI/180,dl=r(me[0]-dad[0]),dn=r(me[1]-dad[1]),h=Math.sin(dl/2)**2+Math.cos(r(dad[0]))*Math.cos(r(me[0]))*Math.sin(dn/2)**2;m="Adrián está a "+(2*R*Math.asin(Math.sqrt(h))).toFixed(1)+" km de vos."}
+ else if(!dad)m="Adrián te manda su ubicación en vivo por WhatsApp. Acá ves la tuya.";else m="Buscando tu ubicación…";
+ $("mapmsg").textContent=m+" (Mapa esquemático)";
+ $("mapgo").onclick=()=>{let u;if(dad&&me)u="https://www.google.com/maps/dir/?api=1&origin="+dad[0]+","+dad[1]+"&destination="+me[0]+","+me[1];else{const p=dad||me;u=p?"https://www.google.com/maps?q="+p[0]+","+p[1]:"https://www.google.com/maps"}window.open(u,"_blank")}}
+$("b8").onclick=()=>show("home");
+$("mapretry").onclick=()=>{$("mapmsg").textContent="Buscando tu ubicación…";locate()};
+$("mapwa").onclick=()=>{const o=mine().find(x=>x.at===mapOrder);if(!o)return;const t="Pedido: "+o.service+"\nPago: "+(o.pay||"-")+"\nMi ubicación: "+(myPos?"https://www.google.com/maps?q="+myPos[0]+","+myPos[1]:"(te la mando por WhatsApp con el clip 📎 → Ubicación)");window.open("https://api.whatsapp.com/send?phone="+WA+"&text="+encodeURIComponent(t),"_blank")};
+$("mb").onclick=()=>show("menu");$("b4").onclick=()=>show("home");$("b5").onclick=()=>show("home");$("b6").onclick=()=>show("menu");$("b7").onclick=()=>{show("mine");renderMine()};
+$("n4").onclick=()=>{renderMine();show("mine")};
+$("m1").onclick=()=>{accFrom="menu";$("aok").classList.add("hide");show("acc")};
+$("m2").onclick=()=>show("help");
+$("m3").onclick=()=>{resetSwipe();show("lock")};
+$("hw").onclick=()=>window.open("https://wa.me/"+WA+"?text="+encodeURIComponent("Hola, necesito ayuda con la app"),"_blank");
+$("wa").onclick=()=>window.open("https://wa.me/"+WA,"_blank");
+$("n1").onclick=()=>show("home");$("n2").onclick=()=>open_("Soporte");
+$("b1").onclick=()=>show("home");$("b2").onclick=()=>show("home");
+
+// Huella real (WebAuthn, verificación de usuario obligatoria)
+const b64=b=>btoa(String.fromCharCode(...new Uint8Array(b)));const ub=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+async function auth(){
+  $("lm").textContent="Apoyá el dedo en el sensor…";
+  try{
+    if(!window.PublicKeyCredential)throw 0;
+    let id=null;try{id=localStorage.getItem("bbf-cred")}catch(e){}
+    const ch=crypto.getRandomValues(new Uint8Array(32));
+    if(id){await navigator.credentials.get({publicKey:{challenge:ch,allowCredentials:[{type:"public-key",id:ub(id)}],userVerification:"required",timeout:60000}})}
+    else{const c=await navigator.credentials.create({publicKey:{challenge:ch,rp:{name:"BauBenFlet"},user:{id:crypto.getRandomValues(new Uint8Array(16)),name:"bauben",displayName:"BauBenFlet"},pubKeyCredParams:[{type:"public-key",alg:-7},{type:"public-key",alg:-257}],authenticatorSelection:{authenticatorAttachment:"platform",userVerification:"required",residentKey:"discouraged"},timeout:60000}});
+      try{localStorage.setItem("bbf-cred",b64(c.rawId))}catch(e){}}
+    enter();
+  }catch(e){$("lm").textContent="No se pudo leer la huella. Probá de nuevo.";$("lskip").classList.remove("hide")}
+}
+function resetSwipe(){const k=$("kn");k.style.transition="none";k.style.transform="";k.style.animation="";$("sw").style.background="";$("lm").textContent="Deslizá hacia arriba para entrar"}
+(function(){const k=$("kn"),T=$("sw");let y0=null,max=0,done=false;const maxD=()=>T.clientHeight-k.clientHeight-16;
+ k.onpointerdown=e=>{if(done)return;y0=e.clientY;max=maxD();k.style.animation="none";k.style.transition="none";k.style.transform="translateY(0)";try{k.setPointerCapture(e.pointerId)}catch(x){}};
+ k.onpointermove=e=>{if(y0===null)return;const d=Math.max(0,Math.min(max,y0-e.clientY));k.style.transform="translateY("+(-d)+"px)";T.style.background="rgba(22,163,74,"+(0.1+0.3*d/max)+")"};
+ k.onpointerup=k.onpointercancel=e=>{if(y0===null)return;const d=Math.max(0,y0-e.clientY);y0=null;if(d>max*0.7)unlock();else{k.style.transition="transform .35s cubic-bezier(.2,1.4,.4,1)";k.style.transform="translateY(0)";T.style.background="";setTimeout(()=>{k.style.transition="";k.style.animation=""},400)}};
+ k.onkeydown=e=>{if(e.key==="Enter"||e.key===" ")unlock()};
+ function unlock(){if(done)return;done=true;max=maxD();const r=k.getBoundingClientRect(),w=$("wipe");k.style.animation="none";
+  w.style.transition="none";w.style.opacity="1";w.style.left=(r.left+r.width/2-10)+"px";w.style.top=(r.top+r.height/2-10)+"px";w.style.transform="scale(0)";void w.offsetWidth;
+  w.style.transition="transform .65s cubic-bezier(.5,0,.2,1)";w.style.transform="scale(260)";k.style.transition="transform .4s ease-in";k.style.transform="translateY(-"+(max+140)+"px)";
+  setTimeout(()=>{enter();w.style.transition="opacity .5s";w.style.opacity="0";resetSwipe();done=false},720)}
+})();
+function enter(){show("home")}
+
+$("send").onclick=async()=>{
+  const w=$("what").value.trim();if(!w){$("what").focus();return}
+  const o={service:cur,what:w,date:$("dt").value,time:$("tm").value,name:$("nm").value.trim(),phone:$("ph").value.trim(),at:Date.now(),status:"pendiente",sameDay:$("dt").value===today()};
+  saveMine([o,...mine()].slice(0,30));startPay(o);return;let saved=false;
+  const msg=`*Pedido BauBenFlet – ${o.service}*\n${o.what}\nFecha: ${o.date||"a coordinar"}  Hora: ${o.time||"a coordinar"}\nNombre: ${o.name}\nTel: ${o.phone}`;
+  const url="https://api.whatsapp.com/send?phone="+WA+"&text="+encodeURIComponent(msg);
+  $("wal").href=url;$("wal").classList.remove("hide");$("cont").classList.remove("hide");pend=o.at;$("ok").textContent="Tu pedido está listo. Tocá el botón verde para enviarlo por WhatsApp.";$("ok").classList.remove("hide");
+  try{navigator.clipboard.writeText(msg)}catch(e){}
+  try{window.open(url,"_blank")}catch(e){}
+  try{if(db){await db.collection("orders").doc("o"+o.at).set(o);saved=true;watchMine()}}catch(e){}
+  const t=`*Pedido BauBenFlet – ${o.service}*\n${o.what}\nFecha: ${o.date||"a coordinar"}  Hora: ${o.time||"a coordinar"}\nNombre: ${o.name}\nTel: ${o.phone}`;
+  $("ok").textContent=(saved?"✅ Pedido enviado a Adrián. ":"")+"Tocá el botón verde para confirmar por WhatsApp.";
+};
+window.loadOrders=()=>{show("orders");if(!db){$("ol").innerHTML='<p class="mu">Sin conexión a la base de pedidos.</p>';return}
+  const tm=setTimeout(()=>{$("ol").innerHTML='<p class="mu">No se pudieron cargar los pedidos.</p>'},10000);
+  db.collection("orders").orderBy("at","desc").limit(50).onSnapshot(s=>{clearTimeout(tm);const a=[];s.docs.forEach(d=>a.push(d.data()));
+    $("ol").innerHTML=a.length?a.map(o=>`<div class="ord"><b></b><br><span></span><br><small></small><div class="act"></div></div>`).join(""):'<p class="mu">Todavía no hay pedidos.</p>';
+    [...$("ol").children].forEach((el,i)=>{if(!a[i])return;const o=a[i];dadActs(el,o);el.querySelector("b").textContent=o.service;el.querySelector("span").textContent=o.what;el.querySelector("small").textContent=`${o.date||"—"} ${o.time||""} · ${o.name||"?"} · ${o.phone||""}`})},()=>{clearTimeout(tm);$("ol").innerHTML='<p class="mu">No tenés permiso para ver pedidos.</p>'})};
+if("serviceWorker" in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));
+</script></body></html>
